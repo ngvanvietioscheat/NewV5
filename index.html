@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Config của NTC</title>
+  <style>
+    body {
+      background: url('https://v1.pinimg.com/videos/iht/720p/ca/05/c5/ca05c5cc1ec97a0b8bae2d2754f7a06f.mp4') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Chalkboard SE', 'Comic Sans MS', sans-serif;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .menu {
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border: 2px solid #a84af0;
+      width: 550px;
+      padding: 40px 40px 60px 40px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 0 20px #a84af0;
+      border-radius: 12px;
+    }
+
+    .logo img {
+      width: 100%;
+      max-width: 310px;
+      border-radius: 90%;
+      box-shadow: 0 0 22px #ff00ff;
+      margin-bottom: 25px;
+    }
+
+    h2.custom-gradient {
+      font-size: 38px;
+    }
+
+    .custom-gradient {
+      background: linear-gradient(to right, violet, gold, white);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+
+    .button {
+      background-color: #2e2e2e;
+      border: 2px solid #ff00ff;
+      color: white;
+      padding: 18px 25px;
+      margin: 12px 0;
+      font-size: 30px;
+      width: 100%;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background-color: #4c4c4c;
+    }
+
+    .button.active {
+      background-color: #ff00ff;
+      border-color: #ff00ff;
+      box-shadow: 0 0 15px #ff00ff;
+    }
+
+    .switch-section {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .switch-block {
+      flex: 1;
+      text-align: center;
+    }
+
+    .switch-label {
+      margin-bottom: 12px;
+      font-size: 23px;
+    }
+
+    .switch-toggle {
+      position: relative;
+      display: inline-block;
+      width: 75px;
+      height: 42px;
+    }
+
+    .switch-toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #aaa;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 32px;
+      width: 32px;
+      left: 5px;
+      bottom: 5px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    
+    input:checked + .slider {
+      background: linear-gradient(45deg, hotpink, gold, red, white);
+      box-shadow: 0 0 12px hotpink;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(33px);
+    }
+
+    .toggle-btn {
+      background-color: red;
+      border: 2px solid #ff0040;
+      color: white;
+      padding: 12px;
+      font-size: 21px;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 130px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .toggle-btn.active {
+      background-color: #ff4ddb;
+      border-color: #ff4ddb;
+      box-shadow: 0 0 10px #c400ff;
+    }
+
+    .activate-btn {
+      background-color: #ff4ddb;
+      color: white;
+      border: 2px solid #c400ff;
+      box-shadow: 0 0 12px #c400ff;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 22px;
+      margin-top: 20px;
+      padding: 18px 20px;
+      width: 100%;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .activate-btn:hover {
+      background-color: #c400ff;
+      color: white;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <div class="logo">
+      <img src="https://preview.redd.it/updated-doro-gif-the-rest-comment-v0-m5izf32htlmd1.gif?width=200&auto=webp&s=102f3e47c4c6bca65d7df8a1d57131a949ff4421" alt="Logo">
+    </div>
+    <h2 class="custom-gradient">MENU CONFIG V5 NTC</h2>
+
+    <div class="switch-section">
+      <div class="switch-block">
+        <div class="switch-label custom-gradient">FREE FIRE MAX</div>
+        <label class="switch-toggle">
+          <input type="checkbox" id="ffmax" onchange="handleModeToggle(this)">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="switch-block">
+        <div class="switch-label custom-gradient">FREE FIRE THƯỜNG</div>
+        <label class="switch-toggle">
+          <input type="checkbox" id="ffth" onchange="handleModeToggle(this)">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <button class="button" onclick="toggleState(this)">AIMLOCK TRICK (OFF)</button>
+    <button class="button" onclick="toggleState(this)">OPTIMIZED CPU GAME (OFF)</button>
+    <button class="button" onclick="toggleState(this)">ANTIBAND 100% 🔰</button>
+    <button class="button" onclick="toggleState(this)">BUFF MÀN TĂNG NHẠY (OFF)</button>
+
+    <div class="switch-section">
+      <div class="switch-block">
+        <div class="switch-label custom-gradient">FOLLOW & LIKE VIDEO</div>
+        <button class="toggle-btn" id="switch1" onclick="toggleSwitch(this)">Hoàn Thành Nhiệm Vụ</button>
+      </div>
+      <div class="switch-block">
+        <div class="switch-label custom-gradient">ĐĂNG KÝ YOUTUBE</div>
+        <button class="toggle-btn" id="switch2" onclick="toggleSwitch(this)">Hoàn Thành Nhiệm Vụ </button>
+      </div>
+    </div>
+
+    <button class="activate-btn" onclick="activateConfig()">KÍCH HOẠT MENU V5</button>
+
+    <div class="footer custom-gradient">Kĩ Thuật Viên TuanCuongGoodLife</div>
+  </div>
+
+  <script>
+    function toggleState(button) {
+      const isOn = button.textContent.includes("ON");
+      if (isOn) {
+        button.textContent = button.textContent.replace("ON", "OFF");
+        button.classList.remove("active");
+      } else {
+        button.textContent = button.textContent.replace("OFF", "ON");
+        button.classList.add("active");
+      }
+    }
+
+    function toggleSwitch(btn) {
+      btn.classList.toggle("active");
+      btn.textContent = btn.classList.contains("active") ? "✅" : "Hoàn Thành";
+    }
+
+    function handleModeToggle(checkbox) {
+      const ffmax = document.getElementById("ffmax");
+      const ffth = document.getElementById("ffth");
+
+      if (checkbox === ffmax && ffmax.checked) {
+        ffth.checked = false;
+      }
+      if (checkbox === ffth && ffth.checked) {
+        ffmax.checked = false;
+      }
+    }
+
+    function activateConfig() {
+      const selectedFeatures = [];
+
+      if (document.getElementById("ffmax").checked) selectedFeatures.push("Loại game : Free Fire Max");
+      if (document.getElementById("ffth").checked) selectedFeatures.push("Loại game : Free Fire Thường           ");
+
+      const allButtons = document.querySelectorAll(".button");
+      allButtons.forEach(btn => {
+        if (btn.classList.contains("active")) {
+          selectedFeatures.push(`${btn.textContent.replace(" (ON)", "✅")}`);
+        }
+      });
+
+      const s1 = document.getElementById("switch1").classList.contains("active");
+      const s2 = document.getElementById("switch2").classList.contains("active");
+      if (s1) selectedFeatures.push("👉 FOLLOW & LIKE VIDEO đã hoàn thành 🪪");
+      if (s2) selectedFeatures.push("👉 ĐĂNG KÝ YOUTUBE đã hoàn thành 🪪");
+
+      if (selectedFeatures.length === 0) {
+        alert("Không có lựa chọn nào được kích hoạt.");
+      } else {
+        alert(`Kích hoạt MenuConfig NTC V5 thành công✅💕!\n\n${selectedFeatures.join("\n")}`);
+      }
+    }
+  </script>
+</body>
+</html>
